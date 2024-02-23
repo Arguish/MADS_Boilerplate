@@ -1,9 +1,5 @@
-# Proyecto Node.js con Express y MongoDB (MADS)
+# Modular Api Data Service (MADS)
 
-**M**odular
-**A**pi
-**D**ata
-**S**ervice
 
 Este proyecto es una aplicación backend construida con Node.js, utilizando Express como framework web y MongoDB para la base de datos. La aplicación está diseñada para ser modular, con una estructura que separa las preocupaciones lógicamente en módulos, controladores, modelos, y rutas. Además, implementa funcionalidades básicas de autenticación de usuarios.
 
