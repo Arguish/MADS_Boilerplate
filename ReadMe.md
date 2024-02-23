@@ -1,6 +1,6 @@
 # Proyecto Node.js con Express y MongoDB (MADS)
 
-**M**ultipurpose
+**M**odular
 **A**pi
 **D**ata
 **S**ervice
@@ -13,6 +13,7 @@ Este proyecto es una aplicación backend construida con Node.js, utilizando Expr
 -   [2. Características Principales](#2-características-principales)
 -   [3. Herramientas y Tecnologías](#3-herramientas-y-tecnologías)
 -   [4. Configuración y Uso](#4-configuración-y-uso)
+    -   [4.1. Creación de Módulos Automatizada](#41-creación-de-módulos-automatizada)
 -   [5. Desarrollo Futuro](#5-desarrollo-futuro)
 -   [6. Actualizaciones](#6-actualizaciones)
     -   [6.1. 14/02/2024 - User Crud](#61-14022024---user-crud)
@@ -42,6 +43,7 @@ La aplicación sigue una estructura de directorios modular para facilitar la esc
 -   **Conexión a MongoDB**: Utiliza Mongoose para conectar con MongoDB Atlas, permitiendo operaciones de base de datos.
 -   **Autenticación de Usuarios**: Implementa registro y CRUD de usuarios con hashing de contraseñas y verificacion MX de correo.
 -   **Modularidad**: Estructura el proyecto por módulos para mantener una separación clara de responsabilidades.
+-   **Creación de modulos**: La base de los modulos se puede crear por comando, manteniendo la estructura de archivos y nomenclatura.
 -   **Logging**: Incorpora Morgan para el registro de solicitudes HTTP, facilitando el debugging y monitoreo.
 
 ## 3. Herramientas y Tecnologías
@@ -59,6 +61,20 @@ La aplicación sigue una estructura de directorios modular para facilitar la esc
 2. **Variables de Entorno**: Configura las variables de entorno necesarias en el archivo `.env`.
 3. **Ejecución del Proyecto**: Utiliza `npm run dev` para iniciar el servidor con `nodemon`, permitiendo el desarrollo con recarga automática.
 4. **Estructura de Clases y Snippets**: Implementa clases y snippets para mejorar la estructura y mantenibilidad del código.
+
+### 4.1. Creación de Módulos Automatizada
+
+Para facilitar la expansión y mantenimiento de nuestro proyecto, hemos implementado un comando personalizado que permite la creación automática de módulos con una estructura de archivos predefinida. Este comando simplifica el proceso de añadir nuevas funcionalidades al proyecto, asegurando la coherencia en la estructura de directorios y la nomenclatura de archivos.
+
+Para crear un nuevo módulo, simplemente ejecuta el siguiente comando desde la raíz del proyecto:
+
+```bash
+npm run create-module <nombreDelModulo>
+```
+
+Reemplaza `<nombreDelModulo>` con el nombre que deseas darle a tu nuevo módulo. El comando generará automáticamente una nueva carpeta bajo `src/modules`, conteniendo los archivos básicos del módulo, asi como un CRUD sencillo, cada uno con una plantilla inicial básica.
+
+Este enfoque no solo mejora la eficiencia al evitar la creación manual de archivos y directorios comunes sino que también promueve una estructura de proyecto uniforme, facilitando la colaboración y el mantenimiento a largo plazo.
 
 ## 5. Desarrollo Futuro
 
