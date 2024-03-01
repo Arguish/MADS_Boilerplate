@@ -76,40 +76,6 @@ Este enfoque no solo mejora la eficiencia al evitar la creación manual de archi
 
 El proyecto está configurado para facilitar la adición de nuevas funcionalidades y módulos, siguiendo los principios de diseño y arquitectura ya establecidos.
 
-## 6. Actualizaciones
-
-### 6.1. 14/02/2024 - User Crud
-
-Este proyecto ha sido actualizado para incluir mejoras significativas en la estructura del código, manejo de errores, y la implementación de funcionalidades adicionales. A continuación, se detallan los cambios realizados.
-
--   Refactorización de la Función `endpointConfig`
-    Se refactorizó la función `endpointConfig` para mejorar la claridad y separar responsabilidades. Esto se logró dividiendo la lógica en funciones más pequeñas y descriptivas, lo que facilita el mantenimiento y la comprensión del código.
-
--   Manejo de Errores de Registro de Usuarios
-    Se implementó una verificación adicional para evitar errores de duplicación al registrar nuevos usuarios. Esto incluye comprobaciones para asegurar que los valores únicos, como el nombre de usuario o el correo electrónico, no se repitan en la base de datos.
-
--   Validación y Verificación de Correos Electrónicos
-    Se añadieron funciones para validar la estructura de las direcciones de correo electrónico mediante expresiones regulares y para verificar la existencia de registros MX, garantizando así que los correos proporcionados son válidos y capaces de recibir mensajes.
-
--   Organización del Código en Archivos Separados
-    Para mejorar la organización del código y separar las responsabilidades, se dividió la lógica del controlador de usuarios en varios archivos según su funcionalidad: creación/registro, obtención, actualización, y eliminación de usuarios. Esto permite una mejor gestión y mantenimiento del código.
-
--   CRUD de Usuarios
-    Se implementaron todas las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para los usuarios, permitiendo una gestión completa de estos en la aplicación. Cada operación está claramente definida y accesible a través de endpoints específicos en la API.
-
--   Mejoras en el Manejo de Promesas y Async/Await
-    Se ajustaron varias funciones para utilizar correctamente las promesas y la sintaxis async/await, asegurando así un manejo adecuado de las operaciones asíncronas y mejorando la legibilidad del código.
-
-### 6.2. 15/02/2024 - Autenticación con Códigos de Verificación
-
--   Se ha desarrollado un sistema de autenticación que genera códigos de 4 dígitos aleatorios. Estos códigos son válidos solo por 2 minutos, tras lo cual son automáticamente eliminados de la base de datos.
--   El sistema está diseñado para devolver el código generado directamente a la página, en lugar de enviarlo por correo electrónico. Esto actúa como una forma básica de reCAPTCHA, mejorando la seguridad y la verificación de los usuarios en tiempo real.
-
-#### 6.2.1. Configuración de Resender para Formularios de Contacto
-
--   Se configuró Resender para redirigir los formularios de contacto recibidos al correo personal. Esto facilita la gestión de comunicaciones entrantes, permitiendo una respuesta rápida y eficiente a las consultas de los usuarios.
-
-#### 6.2.2. Detalles Técnicos
 
 -   Códigos de Verificación: Se implementó una función en JavaScript para generar códigos aleatorios de 4 dígitos. Posteriormente, se añadió lógica para eliminar estos códigos de la base de datos después de 2 minutos, usando setTimeout junto con operaciones async/await para manejar las acciones de eliminación conforme a las prácticas recomendadas por Mongoose.
 -   Manejo de Formularios de Contacto: Se estableció una configuración específica para que los formularios de contacto sean enviados automáticamente al correo personal mediante Resender. Esto mejora la interacción con los usuarios al asegurar que sus mensajes sean revisados y atendidos de manera prioritaria.
